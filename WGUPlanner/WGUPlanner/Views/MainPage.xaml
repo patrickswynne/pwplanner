@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"
+            xmlns:views="clr-namespace:WGUPlanner.Views"
+            x:Class="WGUPlanner.Views.MainPage">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="term.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:TermsPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="course.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:CoursesPage />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <NavigationPage Title="">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="test.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:AssessmentsPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="search.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:SearchPage />
+            </x:Arguments>
+        </NavigationPage>
+        
+        <!-- REPORT PAGE -->
+        <NavigationPage Title="">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="document.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:ReportPage />
+            </x:Arguments>
+        </NavigationPage>
+
+    </TabbedPage.Children>
+    
+</TabbedPage>

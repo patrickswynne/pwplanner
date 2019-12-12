@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Edit\AssessmentEditPage.xaml.cs">
+      <DependentUpon>AssessmentEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Landing\AssessmentsPage.xaml.cs">
+      <DependentUpon>AssessmentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\New\NewAssessmentPage.xaml.cs">
+      <DependentUpon>NewAssessmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\New\NewCoursePage.xaml.cs">
+      <DependentUpon>NewCoursePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Landing\CoursePage.xaml.cs">
+      <DependentUpon>CoursePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Edit\CourseEditPage.xaml.cs">
+      <DependentUpon>CourseEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Landing\TermsPage.xaml.cs">
+      <DependentUpon>TermsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Edit\TermEditPage.xaml.cs">
+      <DependentUpon>TermEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\New\NewTermPage.xaml.cs">
+      <DependentUpon>NewTermPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Login\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Login\Registration.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Ancillary\ReportPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Ancillary\SearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

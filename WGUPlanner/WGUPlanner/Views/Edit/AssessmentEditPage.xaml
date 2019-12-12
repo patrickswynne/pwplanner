@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WGUPlanner.Views.AssessmentEditPage"
+             Title="Edit">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="home_icon.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="" Clicked="Delete_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="trash_icon.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="5" Padding="3">
+            <Label Text="Title" FontSize="Micro" />
+            <Editor Text="{Binding AssessmentTitle}" FontSize="Micro" Margin="0" />
+
+            <Label Text="{Binding CourseTitle}" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Micro"></Label>
+            <Picker x:Name="CourseTitlePicker" Grid.Row="1" Grid.Column="1" SelectedIndex="{Binding CoursesSelectedIndex}" FontSize="Micro" ItemsSource="{Binding CourseTitle}"/>
+
+
+            <Label Text="Get Notifications" FontSize="Small" />
+            <Switch IsToggled="{Binding AssessmentNotification}"/>
+
+            <Label Text="Start Date" FontSize="Micro" />
+            <DatePicker Date="{Binding AssessmentStartDate}" FontSize="Micro" Margin="0"  MinimumDate="Jan 1 2019">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+            </DatePicker>
+
+            <Label Text="End Date" FontSize="Micro" />
+            <DatePicker Date="{Binding AssessmentEndDate}" FontSize="Micro" Margin="0" MinimumDate="Jan 1 2019">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+            </DatePicker>
+
+            <Label Text="Assessment Type" FontSize="Micro" />
+            <Picker x:Name="AssessmentType" SelectedIndex="{Binding AssessmentType}" HorizontalOptions="FillAndExpand" FontSize="Micro" >
+                <Picker.Items>
+                    <x:String>objective</x:String>
+                    <x:String>performance</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

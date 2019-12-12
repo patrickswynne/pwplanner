@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WGUPlanner.Views.TermEditPage"
+             Title="Edit">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="home_icon.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="" Clicked="Delete_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="trash_icon.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Title" FontSize="Micro" />
+                <Editor Text="{Binding TermTitle}" FontSize="Micro" Margin="0" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Get Notifications" FontSize="Micro" HorizontalOptions="Start" />
+                <Switch IsToggled="{Binding TermNotification}" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Start Date" FontSize="Micro" HorizontalOptions="Start"/>
+                <DatePicker Date="{Binding TermStartDate}" FontSize="Micro" Margin="0"  MinimumDate="Jan 1 2019" HorizontalOptions="End">
+                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="End Date" FontSize="Micro" HorizontalOptions="Start"/>
+                <DatePicker Date="{Binding TermEndDate}" FontSize="Micro" Margin="0" MinimumDate="Jan 1 2019" HorizontalOptions="End">
+                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

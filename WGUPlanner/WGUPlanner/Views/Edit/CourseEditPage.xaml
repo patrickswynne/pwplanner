@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WGUPlanner.Views.CourseEditPage"
+             Title="Edit">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" >
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="home_icon.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="" Clicked="Delete_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android" Value="trash_icon.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Title" FontSize="Micro" />
+            <Editor Text="{Binding CourseTitle}" FontSize="Micro" Margin="0" />
+
+            <Label Text="Term Title" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Micro"></Label>
+            <Picker x:Name="TermTitlePicker" Grid.Row="1" Grid.Column="1" SelectedIndex="{Binding TermsSelectedIndex}" FontSize="Micro" ItemsSource="{Binding TermTitle}"/>
+
+            <Label Text="Course Status" Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Micro"></Label>
+            <Picker x:Name="CourseStatusPicker" Grid.Row="1" Grid.Column="1" SelectedIndex="{Binding StatusSelectedIndex}" FontSize="Micro" ItemsSource="{Binding CourseStatus}"/>
+
+            <Label Text="Get Notifications" FontSize="Micro" />
+            <Switch IsToggled="{Binding CourseNotification}"/>
+
+            <Label Text="Start Date" FontSize="Micro" />
+            <DatePicker Date="{Binding CourseStartDate}" FontSize="Micro" Margin="0" MinimumDate="Jan 1 2019">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+            </DatePicker>
+
+            <Label Text="End Date" FontSize="Micro" />
+            <DatePicker Date="{Binding CourseEndDate}" FontSize="Micro" Margin="0" MinimumDate="Jan 1 2019">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+            </DatePicker>
+
+            <Label Text="Instructor Name" FontSize="Micro" />
+            <Editor Text="{Binding CourseInstructorName}" FontSize="Micro" Margin="0" />
+
+            <Label Text="Instructor Email" FontSize="Micro" />
+            <Editor Text="{Binding CourseInstructorEmail}" FontSize="Micro" Margin="0" />
+
+            <Label Text="Instructor Phone" FontSize="Micro" />
+            <Editor Text="{Binding CourseInstructorPhone}" FontSize="Micro" Margin="0" />
+
+            <Label Text="Course Notes" FontSize="Micro" />
+            <Editor Text="{Binding CourseNotes}" FontSize="Micro" Margin="0" />
+
+            <Button Clicked="OnShareButton_Clicked" Text="Share Notes"/>
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>
